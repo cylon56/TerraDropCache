@@ -15,7 +15,7 @@ contract TerraDrop {
         _;
     }
     
-    function TerraDropDeploy ()
+    function TerraDrop ()
         public
     {
         owner = msg.sender;
