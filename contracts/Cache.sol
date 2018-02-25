@@ -4,7 +4,6 @@ contract Cache {
     
     address public owner;
     address public admin;
-    uint public fundsBalance;
     bytes32 secretHash;
     
     bool public activeStatus = true;
