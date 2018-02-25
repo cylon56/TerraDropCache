@@ -8,7 +8,7 @@ contract TerraDrop {
     address[] public deployedCaches;
     mapping(address => bool) caches;
     
-    event CacheCreated(address newCache, address _owner, uint initialBalance);
+    event CacheCreated(address newCache, address _owner);
     
     modifier onlyOwner {
         require(msg.sender == owner);
@@ -27,9 +27,8 @@ contract TerraDrop {
         returns (address)
     {
         address newCache = new Cache(msg.sender, secret);
-        newCache.transfer(msg.value);
         deployedCaches.push(newCache);
-        CacheCreated(newCache, msg.sender, msg.value);
+        CacheCreated(newCache, msg.sender);
         return newCache;
     }
     
