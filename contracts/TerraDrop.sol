@@ -26,7 +26,7 @@ contract TerraDrop {
         payable
         returns (address)
     {
-        address newCache = new Cache(msg.sender, secret);
+        Cache newCache = new Cache(msg.sender, secret);
         deployedCaches.push(newCache);
         CacheCreated(newCache, msg.sender);
         return newCache;
